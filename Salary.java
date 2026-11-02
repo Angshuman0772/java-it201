@@ -1,4 +1,4 @@
-// Write a program to implement the Multiple Inheritance kind of framework (Gross Interface, Employee & Salary classes).
+// Write a program to implement the Multiple Inheritance kind of framework (Gross Interface, Employee3 & Salary classes).
 
 interface Gross {
     void calculateGross();
@@ -18,11 +18,11 @@ class Salary implements Gross {
     }
 }
 
-class Employee extends Salary {
+class Employee3 extends Salary {
     int empNo;
     String name, department;
 
-    Employee(int empNo, String name, String department, double basicPay) {
+    Employee3(int empNo, String name, String department, double basicPay) {
         super(basicPay);
         this.empNo = empNo;
         this.name = name;
@@ -40,11 +40,9 @@ class Employee extends Salary {
         System.out.println("HRA: " + HRA);
         System.out.println("Gross Salary: " + grossSalary);
     }
-}
 
-public class Main {
     public static void main(String[] args) {
-        Employee e = new Employee(101, "Angshuman", "CSE", 30000);
+        Employee3 e = new Employee3(101, "Angshuman", "CSE", 30000);
         e.display();
     }
 }
