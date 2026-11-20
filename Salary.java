@@ -4,21 +4,15 @@ interface Gross {
     void calculateGross();
 }
 
-class Salary implements Gross {
+class Salary {
     double basicPay, DA, HRA, grossSalary;
 
     Salary(double basicPay) {
         this.basicPay = basicPay;
     }
-
-    public void calculateGross() {
-        DA = basicPay * 0.10; // 10% DA
-        HRA = basicPay * 0.20; // 20% HRA
-        grossSalary = basicPay + DA + HRA;
-    }
 }
 
-class Employee3 extends Salary {
+class Employee3 extends Salary implements Gross {
     int empNo;
     String name, department;
 
@@ -27,6 +21,13 @@ class Employee3 extends Salary {
         this.empNo = empNo;
         this.name = name;
         this.department = department;
+    }
+
+    @Override
+    public void calculateGross() {
+        DA = basicPay * 0.10;   // 10% DA
+        HRA = basicPay * 0.20;  // 20% HRA
+        grossSalary = basicPay + DA + HRA;
     }
 
     void display() {
